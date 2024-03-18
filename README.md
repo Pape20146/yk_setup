@@ -1,9 +1,9 @@
 # YubiKey SetUp in Bash (for Ubuntu)
 
-## Idea and Objective
+## Idea and Objective :thought_balloon:
 
 My idea for this project was to enable future hypothetical users to achieve in a few minutes what took me three weeks of studying various YubiKey configurations. By condensing the not so easy process of configuring YubiKey settings with a user-friendly and efficient script, users can swiftly explore and implement different configurations without the extensive time investment typically required. The objective is to empower users to quickly grasp and utilize the full potential of YubiKey devices, leveraging automation to streamline the process and enhance overall efficiency.
-<br>
+<br><br>
 
 ## Overview  :writing_hand:
 
