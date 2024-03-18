@@ -28,11 +28,7 @@ The YubiKey SetUp Project consists of several shell scripts that automate variou
 
 To effectively use the YubiKey SetUp program, follow these steps:
 
-:gear: Firstly download the bash files from the compressed archive at this link (the zip file is also in the current dir).
-
-:gear: Ensure you have a dedicated directory where you want to store all the bash files related to the YubiKey project. This directory will serve as the workspace for managing YubiKey configurations and functionalities. If you don’t have it just create it with `mkdir YK_SetUp`.
-
-:gear: Next, move all relevant bash files, including YK_Menu.sh, YK_Config.sh, YK_Sudo.sh, YK_SSH.sh, YK_Functions.sh, and YK_Download.sh, into the created directory.
+:gear: First of all clone this directory on your pc.
 
 :gear: Once the files are in place, access the directory via the terminal and grant execution permissions to all bash files using the command `sudo chmod +x YK*`. This step ensures that each file can be executed as a program.
 
@@ -41,7 +37,7 @@ To effectively use the YubiKey SetUp program, follow these steps:
 
 ## SSH :closed_lock_with_key: 
 
-It's important to highlight the capabilities and limitations of using PIV and FIDO for SSH authentication. With PIV, users can generate RSA keys of varying lengths (2048, 3072, 4096), but it does not support generating elliptic curve keys like ed25519, which requires firmware version 5.7 or later (Storvix' YK are 5.4.3). To address this limitation, FIDO support has been implemented, focusing on elliptic curve keys.
+It's important to highlight the capabilities and limitations of using PIV and FIDO for SSH authentication. With PIV, users can generate RSA keys of varying lengths (2048, 3072, 4096), but it does not support generating elliptic curve keys like ed25519, which requires firmware version 5.7 or later. To address this limitation, FIDO support has been implemented, focusing on elliptic curve keys.
 
 It's crucial to note that while FIDO offers robust support thanks to PKCS#11, it's limited to Linux environments. On the other hand, PIV is compatible with a wider range of devices.
 
