@@ -33,7 +33,7 @@ To effectively use the YubiKey SetUp program, follow these steps:
 :gear: Once the files are in place, access the directory via the terminal and grant execution permissions to all bash files using the command `sudo chmod +x YK*`. This step ensures that each file can be executed as a program.
 
 :gear: With the execution permissions set, initiate the program by executing the command `./YK_Menu.sh` in the terminal. This action launches the main menu interface, allowing you to navigate through various configuration options and manage your YubiKey device effectively.
-<br>
+<br><br>
 
 ## SSH :closed_lock_with_key: 
 
@@ -42,7 +42,7 @@ It's important to highlight the capabilities and limitations of using PIV and FI
 It's crucial to note that while FIDO offers robust support thanks to PKCS#11, it's limited to Linux environments. On the other hand, PIV is compatible with a wider range of devices.
 
 Currently, the choice between RSA and ECC (elliptic curve cryptography) keys doesn't significantly impact security, as both offer strong cryptographic properties. Therefore, users can confidently choose either option based on their specific requirements and compatibility constraints.
-<br>
+<br><br>
 
 ## Known Issues :no_entry: 
 
@@ -53,7 +53,7 @@ It's important to note a couple of potential issues that users might encounter.
 **:x: YK_Sudo**: Secondly, there might be inconsistencies with the sudo integration. While the script attempts to automate sudo configuration, it may not always work as expected. In some cases, sudo functionality may be disrupted, effectively blocking its usage. If sudo commands fail to execute properly, users should troubleshoot the sudo configuration to ensure proper functionality. If you want to do it manually follow this step-by-step tutorial (it has always worked for me).
 
 **:x: YK_Config**: Additionally, it's crucial to highlight that not all YubiKey models support all configuration options. Certain settings may not be available or might behave differently depending on the YubiKey version. Users are advised to consult the official Yubico website for specific details regarding their YubiKey model to ensure compatibility and functionality with the script's configuration options.
-<br>
+<br><br>
 
 ## Notes :ledger:
 
