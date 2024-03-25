@@ -5,7 +5,9 @@ function fail()
 {
   declare -r C_ERROR="\033[1;31m"
   declare -r C_NORMAL="\033[0m"
+
   echo -e "\n$(date +'%Y-%m-%dT%H:%M:%S%z') ${C_ERROR}[*EE] ${*}${C_NORMAL}\n" >&2 # Print error message with timestamp
+
   exit # Exit script with error code
 }
 
@@ -13,10 +15,14 @@ function fail()
 function yk_detection() 
 {
     echo -e "\n++++++++++++++++++++++ YUBIKEY-DETECTION ++++++++++++++++++++++\n"
+
     yk_info=$(ykman info) # Storing YK datas
-    if [[ "$yk_info" == "" ]]; then
+
+    if [[ "$yk_info" == "" ]]; 
+    then
         fail "No YubiKey detected; plug your YubiKey and run the script again"
     fi
+
     echo -e "YubiKey detected. Here are the details:\n"
     echo "$yk_info"  # Show YK datas
 }
@@ -25,7 +31,9 @@ function ssh_choice()
 {
     echo -e "\n+++++++++++++++++++++++++++++ SSH +++++++++++++++++++++++++++++\n\nChoose the action you want to perform:\n\n0) FIDO2 (ECC)\n1) PIV (RSA)\n2) Exit\n"
     local choice
+
     while true; do
+
         # Prompt user for input
         read -p "Write the corresponding number here (0/1/2): " choice
         choice="${choice,,}"  # Convert to lowercase
@@ -43,10 +51,11 @@ function ssh_choice()
 # Function to display the menu and handle user input
 function start_of_the_story()
 {
-    echo -e "\n++++++++++++++++++++++++++++ MENU +++++++++++++++++++++++++++++\n\nWelcome to YubiKey Auto-SetUp (a lot better than ykman)\n\nChoose the action you want to perform:\n\n0) Download necessary packages\n1) First SetUp - Config Interfaces\n2) Use sudo command with YK 2fa (testing)\n3) SetUp SSH Keys\n4) Write useful YK functions in ~/.bashrc\n5) Exit\n"
-    
+    echo -e "\n++++++++++++++++++++++++++++ MENU +++++++++++++++++++++++++++++\n\nWelcome to YubiKey Auto-SetUp (a lot better than ykman)\n\nChoose the action you want to perform:\n\n0) Download necessary packages\n1) First SetUp - Config Interfaces\n2) Use sudo command with YK 2fa (testing)\n3) SetUp SSH Keys\n4) Write useful YK functions in ~/.bashrc\n5) Exit\n"    
     local choice
+    
     while true; do
+
         # Prompt user for input
         read -p "Write the corresponding number here (0/1/2/3/4/5): " choice
         choice="${choice,,}"  # Convert to lowercase
