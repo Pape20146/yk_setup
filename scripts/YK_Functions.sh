@@ -5,9 +5,11 @@ function fail()
 {
   declare -r C_ERROR="\033[1;31m"
   declare -r C_NORMAL="\033[0m"
+
   /usr/bin/echo -e "\n$(date +'%Y-%m-%dT%H:%M:%S%z') ${C_ERROR}[*EE] ${*}${C_NORMAL}\n" >&2  # Print error message with timestamp
   /usr/bin/echo -e "\e[1;33mReturning to MENU\e[0m"  # Inform user of return to menu
-  exit 2 # Exit script with error code
+
+  exit 1 # Exit script with error code
 }
 
 function start()
@@ -38,8 +40,10 @@ function list()
 
 
 # Function to create ykjoin function in ~/.bashrc
-function create_bashrc_function() {
+function create_bashrc_function() 
+{
     /usr/bin/echo -e "\n++++++++++++++++++ CREATING-BASHRC-FUNCTION +++++++++++++++++++\n"
+
     # Check if ykjoin function already exists in ~/.bashrc
     if grep -q "function ykjoin()" ~/.bashrc; then
         source ~/.bashrc || fail "Unable to update bashrc file"
@@ -53,6 +57,7 @@ function create_bashrc_function() {
         source ~/.bashrc || fail "Unable to update bashrc file"  # Refreshing bashrc configuration
         /usr/bin/echo "ykjoin function has been added to ~/.bashrc successfully"
     fi
+
     if grep -q "function ykmenu()" ~/.bashrc; then
         source ~/.bashrc || fail "Unable to update bashrc file"
         /usr/bin/echo -e "\nykmenu function already exists in ~/.bashrc\n"
